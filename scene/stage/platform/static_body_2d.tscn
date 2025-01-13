@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlsioec4mljvx"]
+
+[ext_resource type="Texture2D" uid="uid://c7i4j6v4tkp2y" path="res://icon.svg" id="1_6nywd"]
+[ext_resource type="PackedScene" uid="uid://dyrk0s8270d62" path="res://scene/char/platformer_player.tscn" id="2_xcbst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v44c6"]
+size = Vector2(1152, 59)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 619)
+scale = Vector2(9, 0.46875)
+texture = ExtResource("1_6nywd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(577, 619.5)
+shape = SubResource("RectangleShape2D_v44c6")
+
+[node name="player" parent="." instance=ExtResource("2_xcbst")]
+position = Vector2(79, 516)
