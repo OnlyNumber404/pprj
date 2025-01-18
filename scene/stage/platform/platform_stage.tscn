@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlsioec4mljvx"]
+
+[ext_resource type="PackedScene" uid="uid://dyrk0s8270d62" path="res://scene/char/platformer_player.tscn" id="2_xcbst"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_tl5jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v44c6"]
+size = Vector2(1151, 53.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbf7c"]
+size = Vector2(165.5, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjm6i"]
+size = Vector2(165, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pjex"]
+size = Vector2(166, 30)
+
+[node name="platform" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.62, 0.144667, 1)
+position = Vector2(576.625, 619.5)
+scale = Vector2(1152.75, 53)
+mesh = SubResource("QuadMesh_tl5jk")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.62, 0.144667, 1)
+position = Vector2(463, 463)
+scale = Vector2(163.375, 30.5)
+mesh = SubResource("QuadMesh_tl5jk")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.62, 0.144667, 1)
+position = Vector2(738, 396)
+scale = Vector2(163.375, 30.5)
+mesh = SubResource("QuadMesh_tl5jk")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.62, 0.144667, 1)
+position = Vector2(404.688, 154.25)
+scale = Vector2(163.375, 30.5)
+mesh = SubResource("QuadMesh_tl5jk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(578, 619)
+shape = SubResource("RectangleShape2D_v44c6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(462, 463)
+shape = SubResource("RectangleShape2D_tbf7c")
+
+[node name="player" parent="." instance=ExtResource("2_xcbst")]
+position = Vector2(79, 516)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(403.188, 154.75)
+shape = SubResource("RectangleShape2D_gjm6i")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(740, 396)
+shape = SubResource("RectangleShape2D_8pjex")
